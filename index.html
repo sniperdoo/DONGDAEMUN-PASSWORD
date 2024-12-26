@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ABOUTSTAY - Welcome | 환영합니다 | ようこそ | 欢迎</title>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/tailwindcss/2.2.19/tailwind.min.js"></script>
+</head>
+<body class="bg-gray-50 min-h-screen">
+    <div class="max-w-2xl mx-auto px-4 py-8">
+        <!-- Password Display -->
+        <div class="bg-white rounded-xl shadow-lg p-8 mb-8 text-center">
+            <div class="text-7xl font-bold text-blue-800 mb-6" style="font-size: 6rem;">
+                2071#
+            </div>
+            <div class="text-gray-600 text-lg space-y-1">
+                * Press # after entering the password
+                <br>* 비밀번호 입력 후 #을 눌러주세요
+                <br>* パスワード入力後、#を押してください
+                <br>* 输入密码后请按#
+            </div>
+        </div>
+
+        <!-- Language Sections -->
+        <div class="space-y-6">
+            <!-- Korean -->
+            <div class="bg-white rounded-lg shadow p-6">
+                <h2 class="text-xl font-bold text-gray-800 mb-3">ABOUTSTAY 환영합니다</h2>
+                <p class="text-gray-600 leading-relaxed">
+                    어바웃스테이를 방문해주셔서 감사합니다.
+                    사전에 숙박을 예약하셨거나, 오늘 체크인을 원하신다면
+                    위의 비밀번호를 입력하고 입장하신 후, 키오스크로 체크인해 주세요.
+                </p>
+            </div>
+
+            <!-- English -->
+            <div class="bg-white rounded-lg shadow p-6">
+                <h2 class="text-xl font-bold text-gray-800 mb-3">Welcome to ABOUTSTAY</h2>
+                <p class="text-gray-600 leading-relaxed">
+                    Thank you for visiting ABOUTSTAY.
+                    If you have a reservation or wish to check in today,
+                    please enter the password above and proceed to the kiosk for check-in.
+                </p>
+            </div>
+
+            <!-- Japanese -->
+            <div class="bg-white rounded-lg shadow p-6">
+                <h2 class="text-xl font-bold text-gray-800 mb-3">ABOUTSTAYへようこそ</h2>
+                <p class="text-gray-600 leading-relaxed">
+                    ABOUTSTAYをご利用いただき、ありがとうございます。
+                    ご予約されているお客様、また本日チェックインをご希望の方は、
+                    上記のパスワードを入力し、キオスクでチェックインを行ってください。
+                </p>
+            </div>
+
+            <!-- Chinese Simplified -->
+            <div class="bg-white rounded-lg shadow p-6">
+                <h2 class="text-xl font-bold text-gray-800 mb-3">欢迎来到ABOUTSTAY</h2>
+                <p class="text-gray-600 leading-relaxed">
+                    感谢您访问ABOUTSTAY。
+                    如果您已预订或想要今天入住，
+                    请输入上述密码，然后在自助服务机上办理入住手续。
+                </p>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        // Automatically scroll to user's language section based on browser settings
+        document.addEventListener('DOMContentLoaded', function() {
+            const userLang = navigator.language || navigator.userLanguage;
+            const sections = {
+                'ko': 0,
+                'en': 1,
+                'ja': 2,
+                'zh': 3
+            };
+            
+            const langPrefix = userLang.split('-')[0];
+            if (sections[langPrefix] !== undefined) {
+                const elements = document.getElementsByClassName('bg-white rounded-lg shadow p-6');
+                elements[sections[langPrefix]].scrollIntoView({ behavior: 'smooth' });
+            }
+        });
+    </script>
+</body>
+</html>
